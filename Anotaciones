@@ -1,0 +1,10 @@
+Notas:
+
+Example1_1 y Exa,ple 1_4 tenía un error, esperaba "int main", en vez de solo "main"
+
+Example1_1 cuenta "/n" como contador de líneas en el archivo, por lo que si solo hay una línea sin "/n", dice que no hay lineas en el archivo.
+
+
+Dudas:
+La diferencia entre "SimpleFlexScanner" y "CalculatorScanner" radica en que mientras en el primero "+" es ADD, en el segundo "+" es "259" que sería el token. No entendemos la utilidad detrás.
+

@@ -443,8 +443,11 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "simbolos.l"
-#line 448 "lex.yy.c"
+#line 1 "Example1_56_SimpleCalculator.l"
+#line 2 "Example1_56_SimpleCalculator.l"
+# include "Example1_56_SimpleCalculator.tab.h"
+#line 450 "lex.yy.c"
+#line 451 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -661,9 +664,9 @@ YY_DECL
 		}
 
 	{
-#line 1 "simbolos.l"
+#line 5 "Example1_56_SimpleCalculator.l"
 
-#line 667 "lex.yy.c"
+#line 670 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -722,56 +725,56 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 2 "simbolos.l"
-{ printf("PLUS\n"); }
+#line 6 "Example1_56_SimpleCalculator.l"
+{ return ADD; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 3 "simbolos.l"
-{ printf("MINUS\n"); }
+#line 7 "Example1_56_SimpleCalculator.l"
+{ return SUB; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 4 "simbolos.l"
-{ printf("TIMES\n"); }
+#line 8 "Example1_56_SimpleCalculator.l"
+{ return MUL; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 5 "simbolos.l"
-{ printf("DIVIDE\n"); }
+#line 9 "Example1_56_SimpleCalculator.l"
+{ return DIV; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 6 "simbolos.l"
-{ printf("ABS\n"); }
+#line 10 "Example1_56_SimpleCalculator.l"
+{ return ABS; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 7 "simbolos.l"
-{ printf("NUMBER %s\n", yytext); }
+#line 11 "Example1_56_SimpleCalculator.l"
+{ yylval = atoi(yytext); return NUMBER; }
 	YY_BREAK
 case 7:
 /* rule 7 can match eol */
 YY_RULE_SETUP
-#line 8 "simbolos.l"
-{ printf("NEWLINE\n"); }
+#line 12 "Example1_56_SimpleCalculator.l"
+{ return EOL; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 9 "simbolos.l"
-{ }
+#line 13 "Example1_56_SimpleCalculator.l"
+{ /* ignore whitespace */ }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 10 "simbolos.l"
-{ printf("Mystery character %s\n", yytext); }
+#line 14 "Example1_56_SimpleCalculator.l"
+{ printf("Mystery character %c\n", *yytext); }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 11 "simbolos.l"
+#line 15 "Example1_56_SimpleCalculator.l"
 ECHO;
 	YY_BREAK
-#line 775 "lex.yy.c"
+#line 778 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1776,5 +1779,8 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 11 "simbolos.l"
+#line 15 "Example1_56_SimpleCalculator.l"
+
+
+
 
