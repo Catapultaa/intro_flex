@@ -8,6 +8,7 @@ int yyerror(char* s);
 %token NUMBER
 %token ADD SUB MUL DIV ABS
 %token EOL
+
 %%
 
 calclist: /* nothing: matches at beginning of input */ 
@@ -28,13 +29,14 @@ term: NUMBER
 	| ABS term { $$ = $2 >= 0? $2 : - $2; }
 ;
 
+
 %%
 int main(int argc, char **argv)
 {
 	yyparse();
 }
 
-yyerror(char *s)
+int yyerror(char *s)
 {
 	fprintf(stderr, "error: %s\n", s);
 }

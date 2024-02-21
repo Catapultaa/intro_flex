@@ -1,5 +1,5 @@
 %{
-# include "Example1_56_SimpleCalculator.tab.h"
+#include "Example1_56_SimpleCalculator.tab.h"
 %}
 
 %%
@@ -13,5 +13,4 @@
 [ \t] { /* ignore whitespace */ }
 . { printf("Mystery character %c\n", *yytext); }
 %%
-
 
