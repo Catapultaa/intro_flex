@@ -3,6 +3,17 @@ Notas:
 - Example1_1 y Exa,ple 1_4 tenía un error, esperaba "int main", en vez de solo "main"
 - Example1_1 cuenta "/n" como contador de líneas en el archivo, por lo que si solo hay una línea sin "/n", dice que no hay lineas en el archivo.
 - A la hora de unir flex con bison se generaron varios errores dado que el libro es muy viejo para las versiones actuales de los programas, de hecho, en  las versiones de bison actuales no se suele utilizar ya un main, la página oficial recomienda no hacerlo y seguir una estructura diferente.
+- En el ejemplo 5, el apuntador de la primera regla estaba mal definido, por lo que no funcionaba.
+
+
+Punto 1:
+La calculadora tal cual está actualmente (Guiada por el libro) no acepta una linea solo con un codigo, el problema no es cuestion el scaner, porque este lee bien "//" el probelma es una linea sin "exp" ya que en el calclist dice que si o si debe tener una expresion, y al no tenerla manda el syntax error, entonces la manera en la que lo resolvimos fue poniendo otra accion en esa regla, de que si hay una linea sin expresión, que no haga nada, enotnces no bota error y el programa sigue, permitiendo hacer los comentarios, y líneas vacias.
+
+Punto 2:
+Ya implementado en la calculadora
+
+Punto 3:
+No pasa nada si vuelvo a utilizar el simbolo "|" ya que la regla de implementación es distinta, enotnces él escoge la acción según la estructura, originalmente el absoluto es "Abs term", y el OR sería "exp ABS factor". Nosotros luego cambiamos la estructura de absoluto a "Abs term Abs" para que se identificara la diferencia visualmente.
 
 Punto 4:
 La diferencia entre "SimpleFlexScanner" (Example 3) y "CalculatorScanner" (Example 4) radica en que mientras en el primero "+" es ADD, en el segundo "+" es "259" que sería el token. Si reconoce los mismos tokens, pero el código de acción es diferente, en el ejemplo 4 para cada uno de los tokens, el escáner devuelve el código correspondiente al token.
